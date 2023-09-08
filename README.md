@@ -17,4 +17,9 @@ In this lab, I worked with the AWS SAM CLI in an IDE environment that is configu
 3. Amazon API Gateway
 
 Enviornment Before
+![image](https://github.com/sai09kumar/AWS-SAM-CLI/assets/124625853/099b19d6-8f25-4267-8471-28ffcc082b21)
+
+Enviornment After
+
+
 
