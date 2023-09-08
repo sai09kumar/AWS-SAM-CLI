@@ -53,7 +53,6 @@ Select the following choices:
 3.Use the most popular runtime and package type? (Python and zip): y
 4. Would you like to enable X-Ray tracing on the function(s) in your application?: N
 5. Would you like to enable monitoring using CloudWatch Application Insights?: N
-
 ```
 ![image](https://github.com/sai09kumar/AWS-SAM-CLI/assets/124625853/ca1c7d63-bce4-46a0-bc85-a15eb10c60ba)
 
@@ -84,6 +83,27 @@ As mentioned previously, this stack deploys a Lambda function and an API endpoin
 ![image](https://github.com/sai09kumar/AWS-SAM-CLI/assets/124625853/fee4cc3b-0f64-4bb8-9ed9-b289a3e4098c)
 
 The Outputs section of SAM template files correspond directly with the Outputs section of a CloudFormation template. The HelloWorldApi value can be used to call the API once it is deployed to trigger the function.
+
+Now, Below the HelloWorldFunction resource definition, add the following IAM Role property, ensuring it is indented at the same level as the existing properties:
+
+```Role: arn:aws:iam::477763416030:role/LambdaBasicRole```
+
+And now, Below the Outputs section, delete the following three lines of code that make up the HelloWorldFunctionIamRole output:
+```
+  HelloWorldFunctionIamRole:
+  Description: "Implicit IAM Role created for Hello World function"
+  Value: !GetAtt HelloWorldFunctionRole.Arn
+```
+The IAM Role or Policies of a Lambda function's execution role are implicitly configured with AWS SAM. These two changes allow you to provide a preconfigured IAM Role that permits the appropriate actions.
+
+Now,
+Open the hello_world/app.py file in the editor:
+Check the code gives the message or not
+
+![image](https://github.com/sai09kumar/AWS-SAM-CLI/assets/124625853/a14f72e8-5066-4c22-ba85-40f43ed20d0e)
+
+The function in this quick start application does not perform any SDK actions. When this API is deployed and called, this function should return a simple hello, world message.
+
 
 
 
