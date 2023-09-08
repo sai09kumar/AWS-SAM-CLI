@@ -35,5 +35,28 @@ aws configure set default.region us-west-2
 ```
 Enter ``` aws configuration list``` to confirm credentials
 
+![image](https://github.com/sai09kumar/AWS-SAM-CLI/assets/124625853/cf281897-0b69-46f0-af5d-87910d728a33)
+
+Before moving to next step open explorer and check the files by expanding project pane
+
+## Second Step
+
+In this step, I initialized an AWS SAM Quick Start application that deploys a Lambda function and an API Gateway and reviewed the AWS SAM template file to get a better understanding of its differences with AWS CloudFormation.
+
+To initialize a new SAM project, enter the command ```sam init --name DemoApp``` in the terminal.
+
+Select the following choices:
+
+```
+1. Which template source would you like to use?: 1-AWS Quick Start Templates
+2.Choose an AWS Quick Start application template: 1-Hello World Example
+3.Use the most popular runtime and package type? (Python and zip): y
+4. Would you like to enable X-Ray tracing on the function(s) in your application?: N
+5. Would you like to enable monitoring using CloudWatch Application Insights?: N
+
+```
+
+
+
 
 
