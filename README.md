@@ -21,5 +21,19 @@ Enviornment Before
 
 Enviornment After
 
+![image](https://github.com/sai09kumar/AWS-SAM-CLI/assets/124625853/dc2ed516-4229-4434-b3dd-98b7e3372a9b)
+
+## First Step
+
+In this step, I configured the AWS credentials needed to use the AWS SAM CLI.
+
+In the IDE editor opwn the terminal and select new terminal and run following commands:
+```
+aws configure set aws_access_key_id AKIAW6PHLF7PNX2T5CI3 &&
+aws configure set aws_secret_access_key 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 &&
+aws configure set default.region us-west-2
+```
+Enter ``` aws configuration list``` to confirm credentials
+
 
 
