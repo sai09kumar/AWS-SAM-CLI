@@ -55,6 +55,39 @@ Select the following choices:
 5. Would you like to enable monitoring using CloudWatch Application Insights?: N
 
 ```
+![image](https://github.com/sai09kumar/AWS-SAM-CLI/assets/124625853/ca1c7d63-bce4-46a0-bc85-a15eb10c60ba)
+
+
+
+![image](https://github.com/sai09kumar/AWS-SAM-CLI/assets/124625853/7ade620c-3d49-4010-99f9-b9db62ffd4f8)
+
+The app template you selected is cloned from the aws-sam-cli-app-templates repository and appears under DemoApp in the Project pane.
+
+Now, to begin exploring the project's template.yaml file. With AWS SAM,  notice the stack templates closely follow the format of an AWS CloudFormation template file. This next section will highlight the subtle differences between the two types of template files.
+
+Double click on template.yaml to explore:
+
+![image](https://github.com/sai09kumar/AWS-SAM-CLI/assets/124625853/67a71096-a3b0-4c76-9c9e-11bab51538a0)
+
+An AWS SAM template file must have the transform declaration, AWS::Serverless-2016-10-31. This identifies the template file as a SAM template, enabling the use of SAM resource definitions and global properties.
+
+The Globals section is unique to SAM template files and defines property values that apply to all of the serverless functions and APIs within your application. The Function global consists of a Timeout value of 3 seconds and a MemorySize of 128.
+
+
+![image](https://github.com/sai09kumar/AWS-SAM-CLI/assets/124625853/2f233e0d-af16-4b55-9a4f-3f1097b4dcef)
+
+The HelloWorldFunction is an AWS::Serverless::Function type and is defined similarly to a CloudFormation AWS::Lambda::Function. The CodeUri property, points to the hello_world/ directory within DemoApp, with the Handler property pointing at the specific file and entry point app.lambda_handler. In the hello_world directory, you'll find a file named app.py with the lambda_handler function defined.
+
+As mentioned previously, this stack deploys a Lambda function and an API endpoint that triggers it. In the AWS SAM template, will find the API defined as an Events property. The API, HelloWorld contains a single GET method call. When the GET request is made to the API, this function will be triggered. This implicit creation of an API reduces the amount of code needed to define a single endpoint.
+
+
+![image](https://github.com/sai09kumar/AWS-SAM-CLI/assets/124625853/fee4cc3b-0f64-4bb8-9ed9-b289a3e4098c)
+
+The Outputs section of SAM template files correspond directly with the Outputs section of a CloudFormation template. The HelloWorldApi value can be used to call the API once it is deployed to trigger the function.
+
+
+
+
 
 
 
