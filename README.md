@@ -105,6 +105,59 @@ Check the code gives the message or not
 The function in this quick start application does not perform any SDK actions. When this API is deployed and called, this function should return a simple hello, world message.
 
 
+## Third Step
+
+The AWS SAM CLI provides guidance during your initial deployments in order to specify reusable deployment values. These values include the AWS Region to deploy into, a deployment S3 bucket for your assets, and more.
+
+In this step,  walk through the guided deployment of your AWS SAM Hello World application.
+
+Enter the following commands in the terminal window to change into your project directory and begin deploying your application:
+```
+cd DemoApp
+sam deploy --guided
+```
+
+![image](https://github.com/sai09kumar/AWS-SAM-CLI/assets/124625853/0d132804-7196-4170-bb02-3ec462a9c42c)
+
+Now, following is created
+
+![image](https://github.com/sai09kumar/AWS-SAM-CLI/assets/124625853/11440621-7637-4575-8dfd-b2751e0e004a)
+
+The configuration for any deployments that follow will be stored in the DemoApp/samconfig.toml file. All deployments that you wish to use the same configuration can be triggered by running sam deploy.
+
+The aws-sam-cli-managed-default-### S3 bucket has been created on your behalf. This bucket will store stack assets such as the template file for future deployments. The deployment bucket can also be created beforehand and supplied as a configuration value with the --s3-bucket flag.
+
+![image](https://github.com/sai09kumar/AWS-SAM-CLI/assets/124625853/17e608ea-41b0-4a57-a2bb-81107b37eef7)
+
+The resources being created for this application are displayed in the changeset and categorized as + Add operations. Notice there is no IAM Role being created for the HelloWorldFunction since you specified an existing IAM Role.
+
+Enter y to deploy changeset and these are the outputs:
+
+![image](https://github.com/sai09kumar/AWS-SAM-CLI/assets/124625853/5dd4e7b9-4742-49a8-b51c-cc8216dcbea4)
+
+Upon a successful deployment, the HelloWorldApi endpoint URL is displayed as an output value.
+
+Follow the link to check the message deployed.
+
+![image](https://github.com/sai09kumar/AWS-SAM-CLI/assets/124625853/4a81635e-9a90-4b5c-90e1-e5e9d3ee7e19)
+
+The hello world message is deployed.
+
+Summary
+In this lab step, you deployed and tested your Hello World SAM application.
+
+By completing this lab, you've successfully accomplished the following tasks:
+
+1. Initialized an AWS SAM project
+2. Configured an IAM Role on the HelloWorld Lambda function
+3. Set deployment values for future SAM deployments
+4. Deployed and tested the Amazon API Gateway endpoint and Lambda function
+
+
+
+
+
+
 
 
 
